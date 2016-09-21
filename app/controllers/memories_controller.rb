@@ -1,6 +1,14 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: [:show, :update, :destroy]
 
+
+  # if params[:user_palettes] == "true"
+  #    @palettes = current_user.palettes
+  #  else
+  #    @palettes = Palette.all
+  #  end
+
+
   # GET /memories
   # GET /memories.json
   def index
@@ -32,6 +40,7 @@ class MemoriesController < ApplicationController
   # PATCH/PUT /memories/1.json
   def update
     # @memory = Memory.find(params[:id])
+    @plant = current_user.memories.find(params[:id])
 
     if @memory.update(memory_params)
       head :no_content
