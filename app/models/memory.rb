@@ -1,3 +1,3 @@
 class Memory < ActiveRecord::Base
-  belongs_to :user, inverse_of: :memories
+  belongs_to :user
 end
