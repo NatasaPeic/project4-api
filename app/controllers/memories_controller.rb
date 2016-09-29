@@ -2,23 +2,23 @@ class MemoriesController < OpenReadController
   before_action :set_memory, only: [:update, :destroy]
 
 
-  # def index
-  #   @memories = Memory.all
-  #   # @memories = current_user.memories
-  #
-  #   render json: @memories
-  # end
-
-
-
   def index
-    if params[:all] == 'true'
-      @memories = Memory.all
-    else
-      @memories = current_user.memories
-    end
+    @memories = Memory.all
+    # @memories = current_user.memories
+
     render json: @memories
   end
+
+
+
+  # def index
+  #   if params[:all] == 'true'
+  #     @memories = Memory.all
+  #   else
+  #     @memories = current_user.memories
+  #   end
+  #   render json: @memories
+  # end
 
 
 
@@ -84,7 +84,7 @@ class MemoriesController < OpenReadController
     end
 
     def memory_params
-      params.require(:memory).permit(:name, :description, :cohort)
+      params.require(:memory).permit(:name, :description, :cohort, :date)
     end
 
      private :memory_params, :set_memory
