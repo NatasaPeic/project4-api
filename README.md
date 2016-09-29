@@ -7,10 +7,9 @@ Link to live-application: https://natasapeic.github.io/project4-client/#/about
 
 # Technologies used
 
-Web application framework: Ruby on Rails;
-Database: PostgreSQL.
-
-Deployment platform: Heroku
+- Web application framework: Ruby on Rails;
+- Database: PostgreSQL.
+- Deployment platform: Heroku
 
 ## API
 
